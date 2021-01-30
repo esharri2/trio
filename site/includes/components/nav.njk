@@ -1,0 +1,19 @@
+{# 'sr-only' is toggled off when mobile nav is opened. #}
+{# did it this way so mobile sr users don't have to toggle the nav; it's just there. #}
+<nav class="sr-only w-full z-10 bg-light absolute top-headerHeight lg:ml-auto lg:static lg:not-sr-only lg:px-4">
+
+  {% set navPages = collections.all | eleventyNavigation %}
+
+  {% macro renderNavListItem(entry) -%}
+
+  {% set activeClass %}{% if entry.url == page.url %}cmp-active-link{% endif %}{% endset %}
+
+  <li class="{{activeClass}} border-b border-dark border-light lg:border-none last:border-none last:-mr-6">
+    <a class="cmp-link uppercase font-title block p-6" href="{{ entry.url | url }}">{{ entry.title }}</a>
+  </li>
+  {%- endmacro %}
+
+  <ul class="flex flex-col w-full lg:flex-row lg:w-auto shadow-lg lg:shadow-none">
+    {% include "./nav-links.njk" %}
+  </ul>
+</nav>

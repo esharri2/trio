@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="h-full bg-light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+    {% if fonts %}
+    <link
+      href="https://fonts.googleapis.com/css2?family={{ fonts }}&display=swap"
+      rel="stylesheet"
+    />
+    {% endif %}
+    <link rel="stylesheet" href="/main.css" />
+    {% if css %}
+    <link rel="stylesheet" href="/{{ css }}.css" />
+    {% endif %} {% if js %} {% set scriptPath %}/{{
+      js
+    }}.bundle.js{% endset %}
+    <script src="{{ scriptPath }}" defer="defer"></script>
+    {% endif %}
+  </head>
+
+  <body>
+    <main id="main">{{ content | safe }}</main>
+  </body>
+</html>

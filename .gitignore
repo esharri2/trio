@@ -1,0 +1,5 @@
+/node_modules
+/site/assets
+dist/
+.DS_Store
+.vscode

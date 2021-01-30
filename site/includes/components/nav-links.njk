@@ -1,0 +1,5 @@
+    {%- for entry in navPages %}
+      {% if entry.url != "/publications/" or (entry.url == "/publications/" and bookspage.show_other == false) %}
+        {{ renderNavListItem(entry) }}
+      {% endif %}
+    {%- endfor -%}

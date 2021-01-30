@@ -1,0 +1,38 @@
+{
+  "a": {
+    "frequency": 250,
+    "loopTime": 1,
+    "filterOctaves": 2,
+    "settings": {
+      "oscillator": {
+        "type": "amtriangle",
+        "harmonicity": 1.5,
+        "modulationType": "sine"
+      }
+    }
+  },
+  "b": {
+    "frequency": 300,
+    "loopTime": 3,
+    "filterOctaves": 2,
+    "settings": {
+      "oscillator": {
+        "type": "amtriangle",
+        "harmonicity": 1.5,
+        "modulationType": "triangle"
+      }
+    }
+  },
+  "c": {
+    "frequency": 180,
+    "loopTime": 6,
+    "filterOctaves": 2,
+    "settings": {
+      "oscillator": {
+        "type": "amtriangle",
+        "harmonicity": 1.5,
+        "modulationType": "sine"
+      }
+    }
+  }
+}

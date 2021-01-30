@@ -1,0 +1,47 @@
+---
+layout: default
+js: trio
+css: trio
+fonts: Inter:wght@200
+eleventyNavigation:
+  key: Trio
+drones:
+  - a
+  - b
+  - c
+effects:
+  - name: volume
+    value: 0
+    max: 12
+    min: -12
+  - name: vibrato
+    value: 0
+    max: 5
+    min: 0
+---
+
+
+<div class="container">
+  <div class="wrapper">
+    <h1>trio</h1>
+      <div class="drones">
+        {% for drone in drones %}
+          <section data-id="{{drone}}" class="pad">
+          <div class="viz"></div>
+            <div data-id="{{drone}}" class="drop-target {{drone}}">
+              <div class="draggable" id="{{drone}}" draggable="true"></div>
+            </div>
+            <button data-id="{{drone}}" class="play"><span class="icon"></span></button>
+            <div class="controls">
+              {% for effect in effects %}
+              <div class="control">
+                <label for="points">{{effect.name}}</label>
+                <input type="range" id="{{effect.name}}" name="{{effect.name}}" min="{{effect.min}}" max="{{effect.max}}" value="{{effect.value}}" step="0.5">
+              </div>
+              {% endfor %}
+            </div>
+          </section>
+        {% endfor %}
+      </div>
+  </div>
+</div>
